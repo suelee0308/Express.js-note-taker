@@ -9,9 +9,9 @@ const app = express();
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
-app.use('/api', api);
 
 app.use(express.static('public'));
+app.use('/api', api);
 
 // GET route for homepage
 app.get('/', (req, res) =>
@@ -19,7 +19,7 @@ app.get('/', (req, res) =>
 );
 
 // GET route for notes page
-app.get('/', (req, res) =>
+app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, 'public/notes.html'))
 );
 
