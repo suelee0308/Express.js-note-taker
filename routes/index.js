@@ -5,6 +5,7 @@ const notesRouter = require('./notes');
 
 const app = express();
 
+// routing to notes when user wants to write a note
 app.use('/notes', notesRouter);
 
 module.exports = app;
